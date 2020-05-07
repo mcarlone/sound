@@ -23,6 +23,13 @@ export const SimpleSingingBowl = () => {
     return <img src={singingBowl} onMouseDown={ onMouseDown } />;
 };
 
+const bowlStyle = (bowlWidth, isPlaying) => {
+    return {
+        margin: '20px',
+        width: bowlWidth+'px',
+        boxShadow: isPlaying ? "0 0 30px 20px #fff, 0 0 40px 20px #f0f, 0 0 80px 50px #0ff" : null
+    }
+};
 
 const FlexSingingBowl = ({scale}) => {
   const MIN_WIDTH = 100, MAX_WIDTH = 300;
@@ -35,13 +42,7 @@ const FlexSingingBowl = ({scale}) => {
 
   const [play, { stop, isPlaying }] = useSound(singingBowlFSfx, {playbackRate: bowlPlaybackRate, volume: bowlVolume});
 
-  const bowlStyle = {
-      margin: '20px',
-      width: bowlWidth+'px',
-      boxShadow: isPlaying ? "0 0 30px 20px #fff, 0 0 40px 20px #f0f, 0 0 80px 50px #0ff" : null
-  }
-
-  return <img src={singingBowl} onMouseDown={ () => isPlaying? stop() : play()} style={bowlStyle}/>;
+  return <img src={singingBowl} onMouseDown={ () => isPlaying? stop() : play()} style={bowlStyle(bowlWidth, isPlaying)}/>;
 }
 
 
