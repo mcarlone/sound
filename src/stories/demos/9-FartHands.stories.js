@@ -7,7 +7,7 @@ import fart2Sfx from '../sounds/fart-3.mp3';
 import fartHandsOff from '../img/fart-hands-off.png';
 import fartHandsOn from '../img/fart-hands-on.png'
 
-export default { title: 'Sorry, but...' };
+export default { title: '4) Sorry, but...' };
 
 
 const randomNumber = (min, max) => Math.random() * (max - min) + min; 

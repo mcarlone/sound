@@ -9,7 +9,7 @@ import fartHandsOn from '../img/fart-hands-on.png';
 
 // Our stories meta-data
 export default {
-  title: `Let's play a sound`
+  title: `1) Let's play a sound`
 };
 
 

@@ -5,7 +5,7 @@ import singingBowlFSfx from '../sounds/singing-bowl-7.5-f-sharp.mp3';
 
 import singingBowl from '../img/singing-bowl-medium-gold-hg75.jpg';
 
-export default { title: 'Playback Rates' };
+export default { title: '3) Playback Rates' };
 
 
 const SingingBowl = () => {
