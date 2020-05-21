@@ -14,8 +14,6 @@ const randomNumber = (min, max) => Math.random() * (max - min) + min;
 
 
 export const InputFarter = () => {
-  const [isDown, setIsDown] = React.useState(false);
-
   const [playFart1] = useSound(fart1Sfx, {playbackRate: randomNumber(0.75, 1.0)});
   const [playFart2] = useSound(fart2Sfx, {playbackRate: randomNumber(1.0, 1.25)});
   const [playFart3] = useSound(fart3Sfx, {
@@ -27,7 +25,7 @@ export const InputFarter = () => {
   });
 
   const onKeyDown = event => {
-    if(event.keyCode === 13) {
+    if(event.keyCode === 13) { // Enter
       playFart3({id:'deep'});
     } else {
       Math.random() > 0.5 ? playFart1() : playFart2();
@@ -38,6 +36,7 @@ export const InputFarter = () => {
 
   return (
     <>
+      <input onChange={onKeyDown} onBlur={onMouseDown}/>
       <input onChange={onKeyDown}/>
       <button type='submit' onMouseDown={onMouseDown}>👏</button>
     </>
